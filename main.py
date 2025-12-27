@@ -2,6 +2,7 @@ import argparse
 
 from linked_list.commands import register_commands as register_linked_list
 from fractal.commands import register_commands as register_fractal
+from graphs.commands import register_commands as register_graphs
 
 def main():
     parser = argparse.ArgumentParser(
@@ -11,6 +12,7 @@ def main():
     
     register_linked_list(subparsers)
     register_fractal(subparsers)
+    register_graphs(subparsers)
     
     args = parser.parse_args()
 
