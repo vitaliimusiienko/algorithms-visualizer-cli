@@ -88,7 +88,7 @@ python main.py --help
 Рекурсивна побудова фрактала за допомогою `matplotlib`. Можна вказати глибину рекурсії.
 
 ```bash
-python main.py fractal --depth 8
+python main.py fractal --type pythagoras --level 7
 
 ```
 
@@ -99,7 +99,7 @@ python main.py fractal --depth 8
 Знаходження найкоротших шляхів у зваженому графі. Для оптимізації використано **бінарну купу**.
 
 ```bash
-python main.py graph --start A
+python main.py graph --algo dijkstra --start A
 
 ```
 
@@ -113,8 +113,10 @@ python main.py graph --start A
 * **Traversal:** Обхід (BFS/DFS) з кольоровим позначенням порядку вузлів.
 
 ```bash
-python main.py heap --values 5 3 8 1 2
-python main.py traverse --method bfs
+python main.py heap --values 7 3 10 1 5 2
+python main.py traverse --values 7 3 8 1 5 9 --method dfs
+python main.py traverse --values 7 3 8 1 5 9 --method bfs
+
 
 ```
 
@@ -126,6 +128,13 @@ python main.py traverse --method bfs
 
 1. **Greedy:** Швидкий вибір за співвідношенням калорії/ціна.
 2. **DP:** Пошук ідеального результату методом динамічного програмування.
+
+```bash
+python main.py knapsack --budget 100 --method greedy
+python main.py knapsack --budget 100 --method dp
+
+```
+
 
 ---
 
