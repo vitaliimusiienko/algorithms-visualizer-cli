@@ -1,3 +1,4 @@
+import sys
 import argparse
 
 from linked_list.commands import register_commands as register_linked_list
@@ -22,12 +23,20 @@ def main():
     register_knapsack(subparsers)
     register_monte_carlo(subparsers)
     
-    args = parser.parse_args()
-
-    if hasattr(args, "func"):
-        args.func(args)
-    else:
+    if len(sys.argv) == 1:
         parser.print_help()
+        sys.exit(1)
+    
+    try:
+        args = parser.parse_args()
+        if not hasattr(args, "func"):
+            print("Unknown command. Use --help to see available commands.")
+            parser.print_help()
+            sys.exit(1)
+        args.func(args)
+    except Exception as e:
+        print(f"Error: {e}")
+        print("Use --help to see available commands.")
 
 
 if __name__ == "__main__":
