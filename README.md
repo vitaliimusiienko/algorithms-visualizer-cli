@@ -25,7 +25,7 @@ A comprehensive collection of classic algorithms and data structures implemented
 
 1.  **Clone the repository:**
     ```bash
-    git clone [https://github.com/vitaliimusiienko/goit-algo-fp.git](https://github.com/vitaliimusiienko/goit-algo-fp.git)
+    git clone [https://github.com/vitaliimusiienko/algorithms-visualizer-cli.git](https://github.com/vitaliimusiienko/algorithms-visualizer-cli.git)
     ```
 2.  **Install dependencies:**
     ```bash
