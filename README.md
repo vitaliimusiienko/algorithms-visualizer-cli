@@ -1,161 +1,47 @@
-# Фінальний проєкт з курсу Basic Algorithms and Data Structures
+# 🧮 Algorithms & Data Structures Toolkit
 
-CLI-проєкт, що містить реалізації фундаментальних алгоритмів та структур даних. Кожне завдання винесене в окремий модуль і запускається через єдину точку входу.
+![Python](https://img.shields.io/badge/Python-3.10%2B-blue?style=for-the-badge&logo=python&logoColor=white)
+![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
+![Status](https://img.shields.io/badge/Status-Active-success?style=for-the-badge)
 
----
+A comprehensive collection of classic algorithms and data structures implemented in Python. This project serves as a performance benchmark and educational toolkit, demonstrating practical applications of graph theory, recursion, and optimization problems.
 
-## Структура проєкту
+## ⚡ Key Features
 
-```text
-goit-algo-hw/
-│
-├── main.py # Точка входу (CLI-інтерфейс)
-├── linked_list/ # Однозв’язний список
-│ ├── commands.py
-│ ├── node.py
-│ ├── reverse.py
-│ ├── merge_sort.py
-│ └── merge_lists.py
-├── fractal/ # Фрактал "Дерево Піфагора"
-│ ├── commands.py
-│ └── pythagoras_tree.py
-├── graphs/ # Алгоритм Дейкстри
-│ ├── commands.py
-│ └── dijkstra.py
-├── heap_visualization/ # Візуалізація бінарної купи
-│ ├── commands.py
-│ ├── node.py
-│ └── visualize_heap.py
-├── tree_traversal/ # Обхід бінарного дерева
-│ ├── commands.py
-│ └── traversal.py
-├── knapsack/ # Жадібний алгоритм та динамічне програмування
-│ ├── commands.py
-│ └── food_selection.py
-├── monte_carlo/ # Метод Монте-Карло
-│ ├── commands.py
-│ └── dice.py
-└── README.md
+* **Fractal Visualization:** Recursive generation of the "Pythagoras Tree" using dynamic plotting.
+* **Graph Algorithms:** Implementation of **Dijkstra’s Algorithm** for finding shortest paths in weighted networks.
+* **Data Structures:** * Binary Heap visualization and manipulation.
+    * Linked List operations (Merge Sort, Reversal).
+* **Optimization:** Solving the **Knapsack Problem** using both Greedy and Dynamic Programming approaches to compare efficiency.
+* **Simulations:** Monte Carlo method implementation for statistical probability estimation.
 
-```
+## 🛠 Tech Stack
 
----
+* **Language:** Python 3.10+
+* **Libraries:** `matplotlib`, `networkx`, `numpy` (for visualization and calculations)
+* **Tools:** `uuid` for unique node identification.
 
-## Встановлення та запуск
+## 🚀 How to Run
 
-1. **Клонуйте репозиторій:**
-```bash
-git clone https://github.com/vitaliimusiienko/goit-algo-fp.git
-cd goit-algo-fp
+1.  **Clone the repository:**
+    ```bash
+    git clone [https://github.com/vitaliimusiienko/goit-algo-fp.git](https://github.com/vitaliimusiienko/goit-algo-fp.git)
+    ```
+2.  **Install dependencies:**
+    ```bash
+    pip install -r requirements.txt
+    ```
+3.  **Run the main script:**
+    ```bash
+    python main.py
+    ```
 
-```
+## 📂 Project Structure
 
-
-2. **Встановіть залежності:**
-```bash
-pip install -r requirements.txt
-
-```
-
-
-3. **Запустіть довідку:**
-```bash
-python main.py --help
-
-```
-
-
+* `/fractal` - Recursive drawing logic.
+* `/graphs` - BFS, DFS, and Dijkstra implementations.
+* `/sorting` - Comparison of different sorting algorithms.
+* `/monte_carlo` - Probability simulations.
 
 ---
-
-## Реалізовані завдання
-
-### 1. Однозв’язний список (`linked-list`)
-
-Реалізовано базові операції над списком:
-
-* **Reverse:** Реверсування списку шляхом зміни посилань.
-* **Merge Sort:** Сортування за часом .
-* **Merge:** Об’єднання двох відсортованих списків.
-
-**Приклад:**
-`python main.py linked-list --values 5 1 4 2 8 --action sort`
-
----
-
-### 2. Фрактал «Дерево Піфагора» (`fractal`)
-
-Рекурсивна побудова фрактала за допомогою `matplotlib`. Можна вказати глибину рекурсії.
-
-```bash
-python main.py fractal --type pythagoras --level 7
-
-```
-
----
-
-### 3. Алгоритм Дейкстри (`graph`)
-
-Знаходження найкоротших шляхів у зваженому графі. Для оптимізації використано **бінарну купу**.
-
-```bash
-python main.py graph --algo dijkstra --start A
-
-```
-
----
-
-### 4. Візуалізація купи та обходу дерева
-
-Візуалізація структур даних за допомогою графіків:
-
-* **Heap:** Побудова купи з масиву.
-* **Traversal:** Обхід (BFS/DFS) з кольоровим позначенням порядку вузлів.
-
-```bash
-python main.py heap --values 7 3 10 1 5 2
-python main.py traverse --values 7 3 8 1 5 9 --method dfs
-python main.py traverse --values 7 3 8 1 5 9 --method bfs
-
-
-```
-
----
-
-### 5. Оптимізація рюкзака (`knapsack`)
-
-Порівняння двох підходів до вибору страв при обмеженому бюджеті:
-
-1. **Greedy:** Швидкий вибір за співвідношенням калорії/ціна.
-2. **DP:** Пошук ідеального результату методом динамічного програмування.
-
-```bash
-python main.py knapsack --budget 100 --method greedy
-python main.py knapsack --budget 100 --method dp
-
-```
-
-
----
-
-### 6. Метод Монте-Карло (`monte-carlo`)
-
-Симуляція кидання двох кубиків (10,000+ ітерацій) та порівняння результатів з теоретичними ймовірностями.
-
-```bash
-python main.py monte-carlo --n-rolls 10000
-
-```
-
----
-
-## Технології
-
-* **Мова:** Python 3.10+
-* **Бібліотеки:** `matplotlib`, `networkx`, `argparse`, `random`
-
-## Висновок
-
-Проєкт демонструє навички роботи з графами, деревами, динамічним програмуванням та статистичним моделюванням. Архітектура дозволяє легко масштабувати бот новими алгоритмами.
-
-```
+*Created by Vitalii Musiienko*
